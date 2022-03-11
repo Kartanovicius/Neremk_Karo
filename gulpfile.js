@@ -90,6 +90,11 @@ function localizeDefault() {
         .pipe(dest('dist'));
 }
 
+function jsonImport() {
+    return src('src/json/*.json')
+    .pipe(dest('dist/json'));
+}
+
 function clear() {
     return del('dist')
 }
@@ -103,8 +108,10 @@ function serve() {
     watch('src/style/scss/**.scss', series(scss)).on('change', sync.reload)
     watch('src/scripts/*', series(js)).on('change', sync.reload)
     watch('src/img/*', series(imgSquash)).on('change', sync.reload)
+    watch('src/json/*', series(jsonImport)).on('change', sync.reload)
+
 }
 
-task('serve', series(clear, html, scss, js, imgSquash, localize, localizeDefault, serve));
-task('build', series(clear, html, scss, js, imgSquash, localize, localizeDefault, ))
+task('serve', series(clear, html, scss, js, imgSquash, localize, localizeDefault, jsonImport, serve));
+task('build', series(clear, html, scss, js, imgSquash, localize, localizeDefault, jsonImport))
 task('clear', clear)

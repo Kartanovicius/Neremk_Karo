@@ -17,6 +17,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-image": "^6.3.1",
     "gulp-imagemin": "^7.1.0",
+    "gulp-json-transform": "^0.4.8",
     "gulp-sass": "^5.1.0",
     "gulp-sass-glob": "^1.1.0",
     "html5-qrcode": "^2.2.0",
@@ -26,6 +27,7 @@
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
     "gulp-html-i18n": "^0.16.0",
+    "gulp-merge-json": "^2.1.1",
     "gulp-minify": "^3.1.0"
   }
 }

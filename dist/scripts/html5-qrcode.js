@@ -2,6 +2,7 @@
 let container = document.querySelector(".qr-reader__result")
 container.style.display = "none"
 
+
 function onScanSuccess(decodedText, decodedResult) {
     // handle the scanned code as you like, for example:
 
@@ -10,32 +11,29 @@ function onScanSuccess(decodedText, decodedResult) {
     let container = document.querySelector(".qr-reader__result")
     container.style.display = "block"
 
-    let russian = document.getElementById("russian-goods");
-    let ukrainian = document.getElementById("ukrainian-goods");
-    let other = document.getElementById("other-goods");
-
-    let decodedCountryCode = decodedText.substring(0, 3);
-
-    let countryCodesRussia = ["460", "461", "462", "463", "464", "465", "466", "467", "468", "469"]
-    let countryCodesUkraine = ["482"]
 
     if (decodedResult.result.format.formatName == "EAN_13") {
 
-        if (countryCodesRussia.includes(decodedCountryCode)) {
-            ukrainian.style.display = "none"
-            other.style.display = "none"
-            russian.style.display = "block"
+        let object = EAN_13CountryCodes
+        let found = false;
 
-        } else if (countryCodesUkraine.includes(decodedCountryCode)) {
-            other.style.display = "none"
-            russian.style.display = "none"
-            ukrainian.style.display = "block"
 
-        } else {
-            ukrainian.style.display = "none"
-            russian.style.display = "none"
-            other.style.display = "block"
+        for (const country in object) {
+
+            let decodedCountryCode = decodedText.substring(0, 3);
+
+            if (object[country].includes(decodedCountryCode)) {
+                container.innerHTML = country
+                found = true
+            }
+
         }
+
+
+        if (!found) {
+            container.innerHTML = "Other"
+        }
+
     }
 
 }
