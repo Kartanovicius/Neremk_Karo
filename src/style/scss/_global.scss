@@ -1,6 +1,6 @@
 * {
     color: $primary;
-    font-family: $nunito-sans;
+    font-family: $font-family;
     scroll-behavior: smooth;
 
     :focus {
@@ -19,14 +19,14 @@ h1 {
     font-style: normal;
     font-weight: bold;
     font-size: 48px;
-    font-family: $inter;
+    font-family: $font-family;
 }
 
 h2 {
     color: $font-color;
     font-size: 60px;
-    font-weight: 700;
-    font-family: $inter;
+    font-weight: 400;
+    font-family: $font-family;
     @media screen and (max-width: map-get($breakpoints, sm)) {
         font-size: 36px;
     }
@@ -35,14 +35,14 @@ h2 {
 h3 {
     color: $font-color;
     font-size: 24px;
-    font-weight: 600;
-    font-family: $nunito-sans;
+    font-weight: 400;
+    font-family: $font-family;
 }
 
 p {
     color: $font-color;
     font-size: 21px;
-    font-family: $nunito-sans;
+    font-family: $font-family;
     @media screen and (max-width: map-get($breakpoints, sm)) {
         font-size: 16px;
     }
@@ -50,7 +50,7 @@ p {
 
 a {
     text-decoration: none;
-    font-family: $nunito-sans;
+    font-family: $font-family;
     color: #fff;
 }
 

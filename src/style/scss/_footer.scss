@@ -7,7 +7,7 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 170px;
+    height: 23vh;
 
     @media screen and (max-width: map-get($breakpoints, md)) {
         flex-direction: column;
@@ -15,42 +15,35 @@ footer {
         height: auto;
     }
 
-    &__nav_holder {      
-        display: grid;
-        grid-auto-flow: column;
-        justify-content: center;
-        align-items: center;  
-        @media screen and (max-width: map-get($breakpoints, md)) {
-            margin: 40px 0;
+    &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90%;
+
+        &__logo {
+            color: $font-color-secondary;
+            font-size: 48px;
         }
-        @media screen and (max-width: map-get($breakpoints, sm)) {
-            grid-auto-flow: row;
-            gap: 40px;
-            margin: 40px 0;
+
+        &__text {
+            color: $font-color-secondary;
         }
-        a {
-            font-family: $nunito-sans;
+
+        &__container {}
+
+        &__copy {
+            font-family: $font-family;
             font-style: normal;
             font-weight: normal;
-            font-size: 18px;
-            line-height: 25px;
-            text-align: center;
+            font-size: 16px;
+            line-height: 38px;
+            text-align: right;
+            white-space: nowrap;
             color: $font-color-secondary;
-            margin-left: 15px;
-            &:hover {
-                color: $active;
-            }
         }
     }
-    
-    &__copy {
-        font-family: $nunito-sans;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 38px;
-        text-align: right;
-        white-space: nowrap;
-        color: $font-color-secondary;
-    }
+
+
+
 }
