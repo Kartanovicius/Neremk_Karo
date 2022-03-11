@@ -1,0 +1,1 @@
+const html5QrCode=new Html5Qrcode("reader"),qrCodeSuccessCallback=(o,e)=>{console.log(e),console.log(o)},config={fps:10,qrbox:{width:250,height:250}};html5QrCode.start({facingMode:"environment"},config,qrCodeSuccessCallback);

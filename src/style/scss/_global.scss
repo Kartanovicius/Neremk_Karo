@@ -1,0 +1,69 @@
+* {
+    color: $primary;
+    font-family: $nunito-sans;
+    scroll-behavior: smooth;
+
+    :focus {
+        outline: none;
+    }
+    
+}
+
+body {
+    background-color: $background;
+    margin: 0;
+}
+
+h1 {
+    color: $font-color;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    font-family: $inter;
+}
+
+h2 {
+    color: $font-color;
+    font-size: 60px;
+    font-weight: 700;
+    font-family: $inter;
+    @media screen and (max-width: map-get($breakpoints, sm)) {
+        font-size: 36px;
+    }
+}
+
+h3 {
+    color: $font-color;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: $nunito-sans;
+}
+
+p {
+    color: $font-color;
+    font-size: 21px;
+    font-family: $nunito-sans;
+    @media screen and (max-width: map-get($breakpoints, sm)) {
+        font-size: 16px;
+    }
+}
+
+a {
+    text-decoration: none;
+    font-family: $nunito-sans;
+    color: #fff;
+}
+
+input {
+    font-size: 19px;
+    @media screen and (max-width: map-get($breakpoints, sm)) {
+        font-size: 16px;
+    }
+}
+
+select {
+    font-size: 19px;
+    @media screen and (max-width: map-get($breakpoints, sm)) {
+        font-size: 16px;
+    }
+}

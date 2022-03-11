@@ -1,0 +1,56 @@
+footer {
+    background-color: $footer-color;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 170px;
+
+    @media screen and (max-width: map-get($breakpoints, md)) {
+        flex-direction: column;
+        padding: 50px 0;
+        height: auto;
+    }
+
+    &__nav_holder {      
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: center;
+        align-items: center;  
+        @media screen and (max-width: map-get($breakpoints, md)) {
+            margin: 40px 0;
+        }
+        @media screen and (max-width: map-get($breakpoints, sm)) {
+            grid-auto-flow: row;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        a {
+            font-family: $nunito-sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 25px;
+            text-align: center;
+            color: $font-color-secondary;
+            margin-left: 15px;
+            &:hover {
+                color: $active;
+            }
+        }
+    }
+    
+    &__copy {
+        font-family: $nunito-sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 38px;
+        text-align: right;
+        white-space: nowrap;
+        color: $font-color-secondary;
+    }
+}

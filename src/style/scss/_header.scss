@@ -1,0 +1,138 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: all .3s ease-in-out;
+    @media screen and (max-width: map-get($breakpoints, sm)) {
+        background-color: rgba( $background, .99 );
+    }
+}
+
+.header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0 25px 0;
+    @media screen and (max-width: map-get($breakpoints, sm)) {
+        padding: 15px 0 15px 0;
+    }
+    &__nav {
+        @media screen and (max-width: map-get($breakpoints, md)) {
+            display: none;
+        }
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        .menu {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            a {
+                font-size: 18px;
+                margin-right: 40px;
+                opacity: 70%;
+                white-space: nowrap;
+                transition: ease-in 0.15s;
+                &:hover {
+                    color: $primary;
+                    opacity: 100%;
+                }
+            }
+        }
+    }
+    &__logo {
+        @media screen and (max-width: map-get($breakpoints, sm)) {
+            width: 100%;
+        }
+    }
+    &__btn {
+        @media screen and (max-width: map-get($breakpoints, md)) {
+            display: none;
+        }
+    }
+}
+
+.scroll {
+    background-color: rgba( $background, .99 )
+}
+
+//Navigation overlay
+.header {
+    .container {
+        position: relative;
+        height: inherit;
+        height: 100%;
+    }
+    &__overlay {
+        height: 0%;
+        width: 100%;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        background-color: $background;
+        background-color: rgba( $background, .98 );
+        overflow: hidden;
+        transition: 0.3s;
+    
+        &__content {
+            position: relative;
+            top: 16%;
+            width: 100%;
+        }
+        &__item {
+            padding: 20px 6px;
+            font-size: 60px;
+            font-family: $inter;
+            font-weight: 700;
+            display: block;
+            transition: 0.15s; 
+            @media screen and (max-width: map-get($breakpoints, sm)) {
+                font-size: 48px;
+            } 
+            &:hover, &:focus {
+                color: $primary;
+            }
+        }
+        &__closebtn {
+            position: absolute;
+            top: 0px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: 400;
+            padding: 15px 0;
+        }
+        &__openbtn {
+            @media screen and (min-width: map-get($breakpoints, md)) {
+                display: none;
+            }
+        }
+        &__bg__items {
+            &__plus {
+                position: absolute;
+                top: 40px;
+                left: 20px;
+                @media screen and (max-width: map-get($breakpoints, sm)) {
+                    top: 20px;
+                } 
+                svg path {
+                    fill: grey;
+                }
+            }
+            &__circle {
+                position: absolute;
+                bottom: 40px;
+                right: 20px;
+                @media screen and (max-width: map-get($breakpoints, sm)) {
+                    bottom: 20px;
+                } 
+                svg circle {
+                    stroke: grey;
+                }
+            }
+        }
+    }
+}

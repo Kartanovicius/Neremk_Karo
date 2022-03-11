@@ -1,0 +1,16 @@
+.qr-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 77vh;
+    overflow-y: hidden;
+    
+    &__reader {
+        width: 100%;
+    }
+
+    &__result {
+        
+    }
+}
