@@ -5,9 +5,16 @@
     align-items: center;
     height: 77vh;
     overflow-y: hidden;
+
+    @media screen and (max-width: map-get($breakpoints, md)) {
+        height: 100vh;
+    }
     
     &__reader {
-        width: 100%;
+        @media screen and (max-width: map-get($breakpoints, md)) {
+            height: 77vh;
+        }
+        width: 70vw;
     }
 
     &__result {

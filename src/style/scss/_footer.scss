@@ -9,12 +9,6 @@ footer {
     align-items: center;
     height: 23vh;
 
-    @media screen and (max-width: map-get($breakpoints, md)) {
-        flex-direction: column;
-        padding: 50px 0;
-        height: auto;
-    }
-
     &__left {
         display: flex;
         flex-direction: column;
