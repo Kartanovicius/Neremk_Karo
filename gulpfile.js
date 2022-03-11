@@ -106,5 +106,5 @@ function serve() {
 }
 
 task('serve', series(clear, html, scss, js, imgSquash, localize, localizeDefault, serve));
-task('build', series(clear, html, scss, localize, localizeDefault, imgSquash))
+task('build', series(clear, html, scss, js, imgSquash, localize, localizeDefault, ))
 task('clear', clear)
