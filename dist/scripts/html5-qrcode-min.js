@@ -1,0 +1,1 @@
+function onScanSuccess(n,e){console.log(`Code matched = ${n}`,e)}function onScanFailure(n){console.warn(`Code scan error = ${n}`)}let html5QrcodeScanner=new Html5QrcodeScanner("reader",{fps:10,qrbox:{width:250,height:250}},!1);html5QrcodeScanner.render(onScanSuccess,onScanFailure);
