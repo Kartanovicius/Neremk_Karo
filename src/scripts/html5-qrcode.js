@@ -2,6 +2,8 @@
 let container = document.querySelector(".qr-reader__result")
 container.style.display = "none"
 
+let activeTimer = false
+
 
 function onScanSuccess(decodedText, decodedResult) {
     // handle the scanned code as you like, for example:
@@ -40,25 +42,27 @@ function onScanSuccess(decodedText, decodedResult) {
 
         }
 
-
-
         if (!found) {
             countryElement.innerHTML = "Other"
         }
 
     }
 
-    setTimeout(
-        function () {
-            container.style.display = "none"
-        }, 5000)
+    if (activeTimer == false) {
+        activeTimer = true
+        setTimeout(
+            function () {
+                activeTimer = false
+                container.style.display = "none"
+            }, 5000)
+    }
 
     for (const button in buttons) {
         buttons[button].addEventListener("click", function () {
             container.style.display = "none"
         });
     }
-    
+
 }
 
 function onScanFailure(error) {
