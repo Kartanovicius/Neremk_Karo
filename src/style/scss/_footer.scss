@@ -1,6 +1,8 @@
 footer {
     background-color: $footer-color;
+
 }
+
 
 .footer {
     display: flex;
@@ -8,6 +10,10 @@ footer {
 
     height: 23vh;
     width: 100%;
+
+    .container {
+        width: 100%;
+    }
 
     &__logo {
         color: $font-color-secondary;
