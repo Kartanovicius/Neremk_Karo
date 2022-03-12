@@ -8,8 +8,6 @@ footer {
     display: flex;
     flex-direction: column;
 
-    height: 23vh;
-
     &__logo {
         color: $font-color-secondary;
         font-size: 40px;
@@ -49,5 +47,9 @@ footer {
 
         display: flex;
         align-items: flex-end;
+
+        .container {
+            margin: 0;
+        }
     }
 }
