@@ -9,7 +9,11 @@ function onScanSuccess(decodedText, decodedResult) {
     console.log(`Code matched = ${decodedText}`, decodedResult);
 
     let container = document.querySelector(".qr-reader__result")
-    container.style.display = "block"
+    let countryElement = container.querySelector(".qr-reader__result__country")
+    let statusElement = container.querySelector(".qr-reader__result__status")
+
+
+    container.style.display = "flex"
 
 
     if (decodedResult.result.format.formatName == "EAN_13") {
@@ -22,8 +26,15 @@ function onScanSuccess(decodedText, decodedResult) {
 
             let decodedCountryCode = decodedText.substring(0, 3);
 
-            if (object[country].includes(decodedCountryCode)) {
-                container.innerHTML = country
+            if (object[country].code.includes(decodedCountryCode)) {
+                countryElement.innerHTML = country
+                statusElement.innerHTML = object[country].status
+                if (object[country].status == "Kremlin") {
+                    statusElement.style.backgroundColor = "#ff0000"
+                }
+                else {
+                    statusElement.style.backgroundColor = "#F5F5F5"
+                }
                 found = true
             }
 
@@ -31,7 +42,7 @@ function onScanSuccess(decodedText, decodedResult) {
 
 
         if (!found) {
-            container.innerHTML = "Other"
+            countryElement.innerHTML = "Other"
         }
 
     }

@@ -4,40 +4,53 @@ footer {
 
 .footer {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+
     height: 23vh;
+    width: 100%;
 
-    &__left {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 90%;
-
-        &__logo {
-            color: $font-color-secondary;
-            font-size: 48px;
-        }
-
-        &__text {
-            color: $font-color-secondary;
-        }
-
-        &__container {}
-
-        &__copy {
-            font-family: $font-family;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 38px;
-            text-align: right;
-            white-space: nowrap;
-            color: $font-color-secondary;
-        }
+    &__logo {
+        color: $font-color-secondary;
+        font-size: 40px;
     }
 
+    &__text {
+        color: $font-color-secondary;
+        font-weight: 300;
+    }
 
+    &__copy {
+        font-family: $font-family;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 38px;
+        text-align: right;
+        white-space: nowrap;
+        color: $font-color;
+        font-weight: 300;
+        text-align: left;
 
+        margin: 10px 0;
+
+    }
+
+    #upper {
+        height: 50%;
+        width: 100%;
+
+        padding: 10px 0;
+
+        background-color: $primary;
+    }
+
+    #lower {
+        height: 50%;
+        width: 100%;
+
+        background-color: $secondary;
+
+        display: flex;
+        align-items: flex-end;
+    }
 }
