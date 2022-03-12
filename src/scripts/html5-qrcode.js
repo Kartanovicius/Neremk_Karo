@@ -11,6 +11,7 @@ function onScanSuccess(decodedText, decodedResult) {
     let container = document.querySelector(".qr-reader__result")
     let countryElement = container.querySelector(".qr-reader__result__country")
     let statusElement = container.querySelector(".qr-reader__result__status")
+    let buttons = document.querySelectorAll("button")
 
 
     container.style.display = "flex"
@@ -31,8 +32,7 @@ function onScanSuccess(decodedText, decodedResult) {
                 statusElement.innerHTML = object[country].status
                 if (object[country].status == "Kremlin") {
                     statusElement.style.backgroundColor = "#ff0000"
-                }
-                else {
+                } else {
                     statusElement.style.backgroundColor = "#F5F5F5"
                 }
                 found = true
@@ -41,12 +41,24 @@ function onScanSuccess(decodedText, decodedResult) {
         }
 
 
+
         if (!found) {
             countryElement.innerHTML = "Other"
         }
 
     }
 
+    setTimeout(
+        function () {
+            container.style.display = "none"
+        }, 5000)
+
+    for (const button in buttons) {
+        buttons[button].addEventListener("click", function () {
+            container.style.display = "none"
+        });
+    }
+    
 }
 
 function onScanFailure(error) {
