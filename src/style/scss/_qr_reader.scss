@@ -3,8 +3,8 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    height: 77vh;
     overflow-y: hidden;
+    height: 100%;
 
     @media screen and (max-width: map-get($breakpoints, md)) {
         height: 100vh;
