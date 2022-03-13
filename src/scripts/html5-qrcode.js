@@ -32,7 +32,7 @@ function onScanSuccess(decodedText, decodedResult) {
             if (object[country].code.includes(decodedCountryCode)) {
                 countryElement.innerHTML = country
                 statusElement.innerHTML = object[country].status
-                if (object[country].status == "Kremlin") {
+                if (object[country].status == "Neremk karo!") {
                     statusElement.style.backgroundColor = "#ff0000"
                 } else {
                     statusElement.style.backgroundColor = "#F5F5F5"
