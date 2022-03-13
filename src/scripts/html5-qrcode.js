@@ -34,8 +34,10 @@ function onScanSuccess(decodedText, decodedResult) {
                 statusElement.innerHTML = object[country].status
                 if (object[country].status == "Neremk karo!") {
                     statusElement.style.backgroundColor = "#ff0000"
+                    statusElement.style.color = "#fff"
                 } else {
                     statusElement.style.backgroundColor = "#F5F5F5"
+                    statusElement.style.color = "#144bc3"
                 }
                 found = true
             }
